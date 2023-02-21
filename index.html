@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Állat képek</title>
 </head>
 <body>
-    
+    <div>
+        <label for="nev_input">Név:</label>
+        <br>
+        <input type="text" id="nev_input" placeholder="Név">
+    </div>
+    <br>
+    <div>
+        <label for="kep_input">Kép neve (vagy urlje) (kiterjesztéssel):</label>
+        <br>
+        <input type="text" id="kep_input" placeholder="Kép neve (kiterjesztéssel)">
+    </div>
+    <br>
+    <button id="hozzaad_gomb">Hozzáad</button>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Kép</th>
+            </tr>
+        </thead>
+        <tbody id="tablazat_tartalom">
+
+        </tbody>
+    </table>
 </body>
 </html>
