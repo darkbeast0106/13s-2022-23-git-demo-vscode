@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Állat képek</title>
 </head>
+
 <body>
     <div>
         <label for="nev_input">Név:</label>
@@ -35,12 +37,29 @@
     </table>
 
     <script>
-        document.getElementById("hozzad_gomb").addEventListener("click", () => {
+        document.getElementById("hozzaad_gomb").addEventListener("click", () => {
             const nev = document.getElementById('nev_input').value;
             const kep = document.getElementById('kep_input').value;
-            // TODO: adatokból új sor készítése
-            // TODO: sor hozzáadása a táblázathoz
+            let kepVegleges = "";
+            const kepKezdete = kep.substring(0, 4);
+            if (kepKezdete == "http") {
+                kepVegleges = kep;
+            } else if (kepKezdete === "img/") {
+                kepVegleges = kep;
+            } else {
+                kepVegleges = "img/" + kep;
+            }
+            const sor = `<tr>
+                    <td>
+                        ${nev}
+                    </td>
+                    <td>
+                        <img src="${kepVegleges}" alt="${nev}" width=100>
+                    </td>
+                </tr>`
+            document.getElementById("tablazat_tartalom").innerHTML += sor;
         });
     </script>
 </body>
+
 </html>
